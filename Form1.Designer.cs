@@ -46,8 +46,8 @@
             Useaction = new ComboBox();
             Crouch = new ComboBox();
             Jump = new ComboBox();
-            Right = new ComboBox();
-            Left = new ComboBox();
+            Right_Dropdown = new ComboBox();
+            Left_Dropdown = new ComboBox();
             Backward = new ComboBox();
             Forward = new ComboBox();
             label10 = new Label();
@@ -140,8 +140,8 @@
             tabPage2.Controls.Add(Useaction);
             tabPage2.Controls.Add(Crouch);
             tabPage2.Controls.Add(Jump);
-            tabPage2.Controls.Add(Right);
-            tabPage2.Controls.Add(Left);
+            tabPage2.Controls.Add(Right_Dropdown);
+            tabPage2.Controls.Add(Left_Dropdown);
             tabPage2.Controls.Add(Backward);
             tabPage2.Controls.Add(Forward);
             tabPage2.Controls.Add(label10);
@@ -250,23 +250,23 @@
             Jump.Size = new Size(121, 23);
             Jump.TabIndex = 12;
             // 
-            // Right
+            // Right_Dropdown
             // 
-            Right.FormattingEnabled = true;
-            Right.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
-            Right.Location = new Point(105, 136);
-            Right.Name = "Right";
-            Right.Size = new Size(121, 23);
-            Right.TabIndex = 11;
+            Right_Dropdown.FormattingEnabled = true;
+            Right_Dropdown.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
+            Right_Dropdown.Location = new Point(105, 136);
+            Right_Dropdown.Name = "Right_Dropdown";
+            Right_Dropdown.Size = new Size(121, 23);
+            Right_Dropdown.TabIndex = 11;
             // 
-            // Left
+            // Left_Dropdown
             // 
-            Left.FormattingEnabled = true;
-            Left.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
-            Left.Location = new Point(105, 94);
-            Left.Name = "Left";
-            Left.Size = new Size(121, 23);
-            Left.TabIndex = 10;
+            Left_Dropdown.FormattingEnabled = true;
+            Left_Dropdown.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
+            Left_Dropdown.Location = new Point(105, 94);
+            Left_Dropdown.Name = "Left_Dropdown";
+            Left_Dropdown.Size = new Size(121, 23);
+            Left_Dropdown.TabIndex = 10;
             // 
             // Backward
             // 
@@ -448,8 +448,8 @@
         private ComboBox Useaction;
         private ComboBox Crouch;
         private ComboBox Jump;
-        private ComboBox Right;
-        private ComboBox Left;
+        private ComboBox Right_Dropdown;
+        private ComboBox Left_Dropdown;
         private ComboBox Backward;
         private ComboBox Forward;
         private ComboBox Sprint;

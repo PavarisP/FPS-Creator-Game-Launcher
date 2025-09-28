@@ -241,91 +241,277 @@ namespace FPS_Creator_Game_Launcher
 
         };
 
+        //Dictionary for keyboard layout (Load)
+        Dictionary<string, string> reversedkeyboardLayout = new Dictionary<string, string>() {
+        {"11","0"},
+        {"2","1"},
+        {"3","2"},
+        {"4","3"},
+        {"5","4"},
+        {"6","5"},
+        {"7","6"},
+        {"8","7"},
+        {"9","8"},
+        {"10","9"},
+        {"12","-"},
+        {"51",","},
+        {"39",";"},
+        {"52","."},
+        {"26","["},
+        {"27","]"},
+        {"53","/"},
+        {"40","\""},
+        {"43","\\"},
+        {"13","+"},
+        {"41","~"},
+        {"30","A"},
+        {"48","B"},
+        {"14","BackSpace"},
+        {"46","C"},
+        {"58","Capslock"},
+        {"32","D"},
+        {"211","Delete"},
+        {"208","Down"},
+        {"18","E"},
+        {"207","End"},
+        {"28","Enter"},
+        {"1","Escape"},
+        {"33","F"},
+        {"59","F1"},
+        {"68","F10"},
+        {"69","F11"},
+        {"70","F12"},
+        {"60","F2"},
+        {"61","F3"},
+        {"62","F4"},
+        {"63","F5"},
+        {"64","F6"},
+        {"65","F7"},
+        {"66","F8"},
+        {"67","F9"},
+        {"34","G"},
+        {"35","H"},
+        {"199","Home"},
+        {"23","I"},
+        {"210","Insert"},
+        {"36","J"},
+        {"37","K"},
+        {"38","L"},
+        {"56","LAlt"},
+        {"29","LCtrl"},
+        {"203","Left"},
+        {"42","LShift"},
+        {"50","M"},
+        {"49","N"},
+        {"83","Num-"},
+        {"82","Num0"},
+        {"79","Num1"},
+        {"80","Num2"},
+        {"81","Num3"},
+        {"75","Num4"},
+        {"76","Num5"},
+        {"77","Num6"},
+        {"71","Num7"},
+        {"72","Num8"},
+        {"73","Num9"},
+        {"156","NumEnter"},
+        {"24","O"},
+        {"25","P"},
+        {"209","PgDown"},
+        {"201","PgUp"},
+        {"16","Q"},
+        {"19","R"},
+        {"184","RAlt"},
+        {"157","RCtrl"},
+        {"205","Right"},
+        {"54","RShift"},
+        {"31","S"},
+        {"57","Space"},
+        {"20","T"},
+        {"15","Tab"},
+        {"22","U"},
+        {"200","Up"},
+        {"47","V"},
+        {"17","W"},
+        {"45","X"},
+        {"21","Y"},
+        {"44","Z"},
+        };
+
+        void setdefault() {
+            //Setting Detault settings
+            Forward.Text = "W";
+            Backward.Text = "S";
+            Left_Dropdown.Text = "A";
+            Right_Dropdown.Text = "D";
+            Jump.Text = "Space";
+            Useaction.Text = "Enter";
+            Crouch.Text = "C";
+            Reload.Text = "R";
+            Sprint.Text = "LShift";
+            PeekLeft.Text = "Q";
+            Peekright.Text = "E";
+            Resolution_Selector.Text = "1920x1080";
+            Textures_Quality.Text = "High";
+        }
+
+
         void setkeys()
 
         {
-
-            //FindKey in dictionary
-
-            //LinQ Reversedictionary to get key from value
-            /*
-
-            var reversedkeyboardLayout = keyboardLayout.ToDictionary(x => x.Value, x => x.Key);
-
-            ForwardKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedForwardKey).Value;
-
-            BackwardKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedBackwardKey).Value;
-
-            LeftKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedLeftKey).Value;
-
-            RightKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedRightKey).Value;
-
-            JumpKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedJumpKey).Value;
-
-            CrouchKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedCrouchKey).Value;
-
-            UseKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedUseKey).Value;
-
-            ReloadKey = reversedkeyboardLayout.FirstOrDefault(kvp => kvp.Value == LoadedReloadKey).Value;
-            */
+            try
+            {
+                ForwardKey = reversedkeyboardLayout[LoadedForwardKey].ToString();
+                Forward.Text = ForwardKey;
+                BackwardKey = reversedkeyboardLayout[LoadedBackwardKey].ToString();
+                Backward.Text = BackwardKey;
+                LeftKey = reversedkeyboardLayout[LoadedLeftKey].ToString();
+                Left_Dropdown.Text = LeftKey;
+                RightKey = reversedkeyboardLayout[LoadedRightKey].ToString();
+                Right_Dropdown.Text = RightKey;
+                JumpKey = reversedkeyboardLayout[LoadedJumpKey].ToString();
+                Jump.Text = JumpKey;
+                CrouchKey = reversedkeyboardLayout[LoadedCrouchKey].ToString();
+                Crouch.Text = CrouchKey;
+                UseKey = reversedkeyboardLayout[LoadedUseKey].ToString();
+                Useaction.Text = UseKey;
+                ReloadKey = reversedkeyboardLayout[LoadedReloadKey].ToString();
+                Reload.Text = ReloadKey;
+                SprintKey = reversedkeyboardLayout[LoadedSprintKey].ToString();
+                Sprint.Text = SprintKey;
+                PeekLeftKey = reversedkeyboardLayout[LoadedPeekLeftKey].ToString();
+                PeekLeft.Text = PeekLeftKey;
+                PeekRightKey = reversedkeyboardLayout[LoadedPeekRightKey].ToString();
+                Peekright.Text = PeekRightKey;
+                Resolution = LoadedResolution;
+                Resolution_Selector.Text = Resolution;
 
 
             //Set Dropdown text
 
-            Forward.Text = ForwardKey;
-
-            Backward.Text = BackwardKey;
-
-            Left.Text = LeftKey;
-
-            Right.Text = RightKey;
-
-            Jump.Text = JumpKey;
-
-            Crouch.Text = CrouchKey;
-
-            Useaction.Text = UseKey;
-
-            Reload.Text = ReloadKey;
 
 
-
+            }
+            catch (Exception)
+            {
+                setdefault();
+            }
         }
 
         void loadvalue()
 
         {
-
             var cfg = new ConfigParser(configpath);
+            LoadedResolution = cfg.GetValue("GAMEDEBUG", "width") + "x" + cfg.GetValue("GAMEDEBUG", "height");
 
             //Keys
 
             LoadedForwardKey = cfg.GetValue("GAMEPROFILE", "key1");
-
             LoadedBackwardKey = cfg.GetValue("GAMEPROFILE", "key2");
-
             LoadedLeftKey = cfg.GetValue("GAMEPROFILE", "key3");
-
             LoadedRightKey = cfg.GetValue("GAMEPROFILE", "key4");
-
             LoadedJumpKey = cfg.GetValue("GAMEPROFILE", "key5");
-
             LoadedCrouchKey = cfg.GetValue("GAMEPROFILE", "key6");
-
             LoadedUseKey = cfg.GetValue("GAMEPROFILE", "key7");
-
             LoadedReloadKey = cfg.GetValue("GAMEPROFILE", "key8");
+            LoadedPeekLeftKey = cfg.GetValue("GAMEPROFILE", "key9");
+            LoadedPeekRightKey = cfg.GetValue("GAMEPROFILE", "key10");
+            LoadedSprintKey = cfg.GetValue("GAMEPROFILE", "key11");
 
             //setting keys
 
+            if (CrouchKey == null ||
+                ForwardKey == null ||
+                BackwardKey == null ||
+                LeftKey == null ||
+                RightKey == null ||
+                JumpKey == null ||
+                UseKey == null ||
+                ReloadKey == null ||
+                PeekLeftKey == null ||
+                PeekRightKey == null ||
+                Textures_Quality == null ||
+                Resolution_Selector == null ||
+                SprintKey == null ||
+                LoadedResolution == null)
+                setdefault();
+            else { 
             setkeys();
-
-            //Resolution
-
-            LoadedResolution = cfg.GetValue("GAMEDEBUG", "width") + "x" + cfg.GetValue("GAMEDEBUG", "height");
+            }
 
         }
 
+        void savevalue()
+        {//check if any value is null
+            try {
+                Resolution = Resolution_Selector.Text;
+                Reso_Height = Resolution.Split(delimiter)[1];
+                Reso_Width = Resolution.Split(delimiter)[0];
+                CrouchKey = keyboardLayout[Crouch.Text].ToString();
+                ForwardKey = keyboardLayout[Forward.Text].ToString();
+                BackwardKey = keyboardLayout[Backward.Text].ToString();
+                LeftKey = keyboardLayout[Left_Dropdown.Text].ToString();
+                RightKey = keyboardLayout[Right_Dropdown.Text].ToString();
+                JumpKey = keyboardLayout[Jump.Text].ToString();
+                SprintKey = keyboardLayout[Sprint.Text].ToString();
+                UseKey = keyboardLayout[Useaction.Text].ToString();
+                ReloadKey = keyboardLayout[Reload.Text].ToString();
+                PeekLeftKey = keyboardLayout[PeekLeft.Text].ToString();
+                PeekRightKey = keyboardLayout[Peekright.Text].ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There is an error, please try again. If the problem still persists, use the default settings.");
+            }
+
+            if (CrouchKey == null ||
+                ForwardKey == null ||
+                BackwardKey == null ||
+                LeftKey == null ||
+                RightKey == null ||
+                JumpKey == null ||
+                UseKey == null ||
+                ReloadKey == null ||
+                PeekLeftKey == null ||
+                PeekRightKey == null ||
+                Textures_Quality == null ||
+                Resolution_Selector == null ||
+                SprintKey == null)
+
+                MessageBox.Show("Please make sure all settings are set before saving.");
+
+            else
+            {
+                //Saving configuration
+         
+                try
+                {
+                    var cfg = new ConfigParser(configpath);
+
+                    cfg.SetValue("GAMEPROFILE", "key1", ForwardKey);
+                    cfg.SetValue("GAMEPROFILE", "key2", BackwardKey);
+                    cfg.SetValue("GAMEPROFILE", "key3", LeftKey);
+                    cfg.SetValue("GAMEPROFILE", "key4", RightKey);
+                    cfg.SetValue("GAMEPROFILE", "key5", JumpKey);
+                    cfg.SetValue("GAMEPROFILE", "key6", CrouchKey);
+                    cfg.SetValue("GAMEPROFILE", "key7", UseKey);
+                    cfg.SetValue("GAMEPROFILE", "key8", ReloadKey);
+                    cfg.SetValue("GAMEPROFILE", "key9", PeekLeftKey);
+                    cfg.SetValue("GAMEPROFILE", "key10", PeekRightKey);
+                    cfg.SetValue("GAMEPROFILE", "key11", SprintKey);
+                    cfg.SetValue("GAMEDEBUG", "width", Reso_Width);
+                    cfg.SetValue("GAMEDEBUG", "height", Reso_Height);
+                    cfg.Save();
+
+                    MessageBox.Show("Setting saved.");
+                    Savesucess = true;
+                }
+                catch (Exception )
+                {
+                    MessageBox.Show("There is an error, please try again. If the problem still persists, use the default settings.");
+                }
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
 
@@ -367,106 +553,7 @@ namespace FPS_Creator_Game_Launcher
 
         //Backward Key dropdown
 
-        private void Backward_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            BackwardKey = keyboardLayout[Backward.Text].ToString();
-
-        }
-
-
-        private void Left_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            LeftKey = keyboardLayout[Left.Text].ToString();
-
-        }
-
-
-        private void Right_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            RightKey = keyboardLayout[Right.Text].ToString();
-
-        }
-
-
-        private void Jump_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            JumpKey = keyboardLayout[Jump.Text].ToString();
-
-        }
-
-
-        private void Crouch_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            CrouchKey = keyboardLayout[Crouch.Text].ToString();
-        }
-        private void Sprint_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            SprintKey = keyboardLayout[Sprint.Text].ToString();
-
-        }
-
-
-        private void Useaction_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            UseKey = keyboardLayout[Useaction.Text].ToString();
-
-        }
-
-
-        private void Reload_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-
-            ReloadKey = keyboardLayout[Reload.Text].ToString();
-
-        }
-
-
-        private void Peekleft_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            PeekLeftKey = keyboardLayout[PeekLeft.Text].ToString();
-
-        }
-
-
-        private void PeekRight_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            PeekRightKey = keyboardLayout[Peekright.Text].ToString();
-
-        }
-
-
-        private void Resolution_Selector_SelectedValueChanged(object sender, EventArgs e)
-
-        {
-
-            //Video Resolution dropdown
-
-            Resolution = Resolution_Selector.Text;
-
-            Height = Resolution.Split(delimiter)[0];
-
-            Width = Resolution.Split(delimiter)[1];
-
-        }
+      
 
         private void Save_Click(object sender, EventArgs e)
         {
