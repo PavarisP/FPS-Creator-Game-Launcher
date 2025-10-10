@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
+using System.Media;
 
 namespace FPS_Creator_Game_Launcher
 {
@@ -41,7 +42,7 @@ namespace FPS_Creator_Game_Launcher
         // Config path
 
         public string configpath = rel_path + @"\Horror\Setup.ini";//Make sure to change "Horror" to the game folder name and have the slash at the end
-
+       // public string Mousehoversound= Properties.Resources.MySound;
 
         public Form1()
         {
@@ -338,7 +339,8 @@ namespace FPS_Creator_Game_Launcher
         {"44","Z"},
         };
 
-        void setdefault() {
+        void setdefault()
+        {
             //Setting Detault settings
             Forward.Text = "W";
             Backward.Text = "S";
@@ -387,8 +389,6 @@ namespace FPS_Creator_Game_Launcher
                 Resolution_Selector.Text = Resolution;
 
 
-            //Set Dropdown text
-
 
 
             }
@@ -397,6 +397,9 @@ namespace FPS_Creator_Game_Launcher
                 setdefault();
             }
         }
+
+
+
 
         void loadvalue()
 
@@ -420,30 +423,32 @@ namespace FPS_Creator_Game_Launcher
 
             //setting keys
 
-            if (CrouchKey == null ||
-                ForwardKey == null ||
-                BackwardKey == null ||
-                LeftKey == null ||
-                RightKey == null ||
-                JumpKey == null ||
-                UseKey == null ||
-                ReloadKey == null ||
-                PeekLeftKey == null ||
-                PeekRightKey == null ||
-                Textures_Quality == null ||
-                Resolution_Selector == null ||
-                SprintKey == null ||
-                LoadedResolution == null)
+            if (CrouchKey != null ||
+                ForwardKey != null ||
+                BackwardKey != null ||
+                LeftKey != null ||
+                RightKey != null ||
+                JumpKey != null ||
+                UseKey != null ||
+                ReloadKey != null ||
+                PeekLeftKey != null ||
+                PeekRightKey != null ||
+                Textures_Quality != null ||
+                Resolution_Selector != null ||
+                SprintKey != null ||
+                LoadedResolution != null)
+                setkeys();
+            else
+            {
                 setdefault();
-            else { 
-            setkeys();
             }
 
         }
 
         void savevalue()
         {//check if any value is null
-            try {
+            try
+            {
                 Resolution = Resolution_Selector.Text;
                 Reso_Height = Resolution.Split(delimiter)[1];
                 Reso_Width = Resolution.Split(delimiter)[0];
@@ -483,7 +488,7 @@ namespace FPS_Creator_Game_Launcher
             else
             {
                 //Saving configuration
-         
+
                 try
                 {
                     var cfg = new ConfigParser(configpath);
@@ -503,10 +508,10 @@ namespace FPS_Creator_Game_Launcher
                     cfg.SetValue("GAMEDEBUG", "height", Reso_Height);
                     cfg.Save();
 
-                    MessageBox.Show("Setting saved.");
+                    
                     Savesucess = true;
                 }
-                catch (Exception )
+                catch (Exception)
                 {
                     MessageBox.Show("There is an error, please try again. If the problem still persists, use the default settings.");
                 }
@@ -553,7 +558,7 @@ namespace FPS_Creator_Game_Launcher
 
         //Backward Key dropdown
 
-      
+
 
         private void Save_Click(object sender, EventArgs e)
         {
@@ -562,16 +567,8 @@ namespace FPS_Creator_Game_Launcher
             {
                 var cfg = new ConfigParser(configpath);
 
-                cfg.SetValue("GAMEPROFILE", "key1", ForwardKey);
-                cfg.SetValue("GAMEPROFILE", "key2", BackwardKey);
-                cfg.SetValue("GAMEPROFILE", "key3", LeftKey);
-                cfg.SetValue("GAMEPROFILE", "key4", RightKey);
-                cfg.SetValue("GAMEPROFILE", "key5", JumpKey);
-                cfg.SetValue("GAMEPROFILE", "key6", CrouchKey);
-                cfg.SetValue("GAMEPROFILE", "key7", UseKey);
-                cfg.SetValue("GAMEPROFILE", "key8", ReloadKey);
-                cfg.SetValue("GAMEPROFILE", "key9", PeekLeftKey);
-                cfg.SetValue("GAMEPROFILE", "key10", PeekRightKey);
+            savevalue();
+            MessageBox.Show("Setting saved.");
 
                 cfg.SetValue("GAMEDEBUG", "height", Height);
                 cfg.SetValue("GAMEDEBUG", "width", Width);
@@ -595,8 +592,17 @@ namespace FPS_Creator_Game_Launcher
 
             P.Start();
 
-            Application.Exit();
+                Application.Exit();
+            }
         }
+
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            setdefault();
+        }
+
+
     }
 }
 

@@ -62,6 +62,7 @@
             Save = new Button();
             Reset = new Button();
             Launch = new Button();
+            comboBox1 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(comboBox1);
             tabPage1.Controls.Add(Textures_Quality);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(Resolution_Selector);
@@ -94,12 +96,14 @@
             // 
             // Textures_Quality
             // 
+            Textures_Quality.ForeColor = SystemColors.WindowText;
             Textures_Quality.FormattingEnabled = true;
             Textures_Quality.Items.AddRange(new object[] { "High", "Meduim", "Low" });
             Textures_Quality.Location = new Point(128, 55);
             Textures_Quality.Name = "Textures_Quality";
             Textures_Quality.Size = new Size(121, 23);
             Textures_Quality.TabIndex = 3;
+            Textures_Quality.Text = "High";
             // 
             // label2
             // 
@@ -398,6 +402,14 @@
             Launch.UseVisualStyleBackColor = true;
             Launch.Click += Launch_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(155, 158);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -458,5 +470,6 @@
         private Label label12;
         private ComboBox Peekright;
         private Label label13;
+        private ComboBox comboBox1;
     }
 }
