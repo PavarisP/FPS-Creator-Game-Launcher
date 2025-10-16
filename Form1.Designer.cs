@@ -62,7 +62,6 @@
             Save = new Button();
             Reset = new Button();
             Launch = new Button();
-            comboBox1 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -81,7 +80,6 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(comboBox1);
             tabPage1.Controls.Add(Textures_Quality);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(Resolution_Selector);
@@ -402,14 +400,6 @@
             Launch.UseVisualStyleBackColor = true;
             Launch.Click += Launch_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(155, 158);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -470,6 +460,5 @@
         private Label label12;
         private ComboBox Peekright;
         private Label label13;
-        private ComboBox comboBox1;
     }
 }

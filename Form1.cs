@@ -5,12 +5,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 using System.Media;
+using System.Web;
 
 namespace FPS_Creator_Game_Launcher
 {
@@ -29,7 +30,13 @@ namespace FPS_Creator_Game_Launcher
 
         public string LoadedForwardKey, LoadedBackwardKey, LoadedLeftKey, LoadedRightKey, LoadedJumpKey, LoadedCrouchKey, LoadedSprintKey, LoadedUseKey, LoadedReloadKey, LoadedMeleeKey, LoadedProneKey, LoadedPeekLeftKey, LoadedPeekRightKey;
 
-        //Setkey
+        public int nroflevels = 1; //set this to the number of levels in your game
+
+        //language
+        public string? language="english"; //Set this as the language of your game
+
+        //unique game code
+        public string? uniquegamecode= "01o84r/:r22o40r/:.25e41x01e84H/:";//set you unique game code here, this is important for multiplayer games
 
         //loaded Resolution
 
@@ -41,7 +48,7 @@ namespace FPS_Creator_Game_Launcher
 
         // Config path
 
-        public string configpath = rel_path + @"\Horror\Setup.ini";//Make sure to change "Horror" to the game folder name and have the slash at the end
+        public string configpath = rel_path + @"\Horror\setup.ini";//Make sure to change "Horror" to the game folder name and have the slash at the end
        // public string Mousehoversound= Properties.Resources.MySound;
 
         public Form1()
@@ -398,8 +405,129 @@ namespace FPS_Creator_Game_Launcher
             }
         }
 
+        void createnewini(string filename)
+        {
+            using (FileStream fs = File.Create(filename));
+            loadnewdefault();
+        }
+
+        void loadnewdefault()
+        {
+            //You can change any default in setting here, it will be the default settings when the setup.ini file does not exist.
+            //GENRE section
+            int nooftaunts = 1;
+            var cfg = new ConfigParser(configpath);
+            cfg.SetValue("GENRE", "gametype", 0);//Set this to 0 for single player games and 1 for multiplayer games
+            cfg.SetValue("GENRE", " serverhostname","FPSC Arena");
+            while (nooftaunts <= 30)
+            {
+                cfg.SetValue("GENRE", $"taunt{nooftaunts}", "");
+                nooftaunts++;
+            }
+            nooftaunts = 1;
+            //GAMERUN section
+            cfg.SetValue("GAMERUN", "realgameview", 1);
+            cfg.SetValue("GAMERUN", "dynamiclighting", 1);
+            cfg.SetValue("GAMERUN", "useeffects", 1);
+            cfg.SetValue("GAMERUN", "useeffectsonguns", 1);
+            cfg.SetValue("GAMERUN", "useeffectsonscene", 1);
+            cfg.SetValue("GAMERUN", "lightmapperbypass", 1);
+            cfg.SetValue("GAMERUN", "low_spec_mode", 0);
+            cfg.SetValue("GAMERUN", "skyboxfog", 0);
+            cfg.SetValue("GAMERUN", "shaderweapons", 0);
+            cfg.SetValue("GAMERUN", "useeffectsonentities", 1);
+            cfg.SetValue("GAMERUN", "dividetexturesize", 2);
+            cfg.SetValue("GAMERUN", "xbox", 0);
+            cfg.SetValue("GAMERUN", "xboxmag", 25);
+            cfg.SetValue("GAMERUN", "controllerhint", 0);
+            cfg.SetValue("GAMERUN", "vrmode", 0);
+            cfg.SetValue("GAMERUN", "vrmodemag", 100);
+            cfg.SetValue("GAMERUN", "mousesensitivity", 100);
+            cfg.SetValue("GAMERUN", "producelogfiles", 0);
+            cfg.SetValue("GAMERUN", "hsrmode", 2);
+            cfg.SetValue("GAMERUN", "aspectratio", 1);
+            cfg.SetValue("GAMERUN", "newblossershaders", 1);
+            cfg.SetValue("GAMERUN", "postprocessing", 1);
+            cfg.SetValue("GAMERUN", "invmouse", 0);
+            cfg.SetValue("GAMERUN", "atten", 500);
+            cfg.SetValue("GAMERUN", "darkaion", 1);
+            cfg.SetValue("GAMERUN", "marblefloor", 0);
+            cfg.SetValue("GAMERUN", "newlight", 1);
+            cfg.SetValue("GAMERUN", "physx", 1);
+            cfg.SetValue("GAMERUN", "gluedgun", 0);
+            cfg.SetValue("GAMERUN", "flashon", 2);
+            cfg.SetValue("GAMERUN", "blob_shadow", 2);
+            cfg.SetValue("GAMERUN", "vsync", 1);
+            cfg.SetValue("GAMERUN", "showaioutlines", 0);
+            cfg.SetValue("GAMERUN", "airadius", 20);
+            cfg.SetValue("GAMERUN", "disablepeeking", 0);
+            cfg.SetValue("GAMERUN", "disableparticles", 0);
+            //GAMEMULTIPLAYER section
+            cfg.SetValue("GAMEMULTIPLAYER", "multiplayergame", 0);
+            cfg.SetValue("GAMEMULTIPLAYER", "gameobjectivetype", 0);
+            cfg.SetValue("GAMEMULTIPLAYER", "gameobjectivevalue", 0);
+            cfg.SetValue("GAMEMULTIPLAYER", "oneshotkills", 0);
+            cfg.SetValue("GAMEMULTIPLAYER", "maxplayers", 0);
+            cfg.SetValue("GAMEMULTIPLAYER", "spawnrandom", 1);
+            cfg.SetValue("GAMEMULTIPLAYER", "uniquegamecode",uniquegamecode);
+
+            //GAMEDEBUG section
+            cfg.SetValue("GAMEDEBUG", "height", 1020);
+            cfg.SetValue("GAMEDEBUG", "width", 1980);
+            cfg.SetValue("GAMEDEBUG", "depth", 32);
+            cfg.SetValue("GAMEDEBUG", "usesky", 1);
+            cfg.SetValue("GAMEDEBUG", "usefloor", 0);
+            cfg.SetValue("GAMEDEBUG", "useenvsounds", 1);
+            cfg.SetValue("GAMEDEBUG", "useweapons", 1);
+
+            //GAMEPROFILE section
+            cfg.SetValue("GAMEPROFILE", "title", $"languagebank\\{language}\\gamebank\\mygame\\titlepage.fpi");
+            cfg.SetValue("GAMEPROFILE", "global", $"languagebank\\{language}\\gamebank\\mygame\\setuplevel.fpi");
+            cfg.SetValue("GAMEPROFILE", "gamewon", $"languagebank\\{language}\\gamebank\\mygame\\gamewon.fpi");
+            cfg.SetValue("GAMEPROFILE", "gameover", $"languagebank\\{language}\\gamebank\\mygame\\gameover.fpi");
+            cfg.SetValue("GAMEPROFILE", "key1", 17);
+            cfg.SetValue("GAMEPROFILE", "key2 ", 31);
+            cfg.SetValue("GAMEPROFILE", "key3", 30);
+            cfg.SetValue("GAMEPROFILE", "key4", 32);
+            cfg.SetValue("GAMEPROFILE", "key5", 57);
+            cfg.SetValue("GAMEPROFILE", "key6", 46);
+            cfg.SetValue("GAMEPROFILE", "key7 ", 72);
+            cfg.SetValue("GAMEPROFILE", "key8", 19);
+            cfg.SetValue("GAMEPROFILE", "key9 ", 16);
+            cfg.SetValue("GAMEPROFILE", "key10", 18);
+            cfg.SetValue("GAMEPROFILE", "key11", 42);
+            while (nooftaunts <= 30)
+            {
+                cfg.SetValue("GENRE", $"taunt{nooftaunts}", "");
+                nooftaunts++;
+            }
+            int slot = 1;
+            while (slot <= 9)
+            {
+                cfg.SetValue("GAMEPROFILE", $"slot{slot}", "");
+                slot++;
+            }
+            int level = 1;
+            cfg.SetValue("GAMEPROFILE", "levelmax", nroflevels);
+            do
+            {
+                cfg.SetValue("GAMEPROFILE", $"levelfpm{level}", $"mapbank\\horrorgame\\{level}.fpm");
+                /*Set the loading screen
+                cfg.SetValue("GAMEPROFILE", $"levelfpi{level}", $"mapbank\\horrorgame\\{level}.fpm");*/
+            }
+            while (level <= nroflevels);
+            //saveall settings
+            cfg.Save();
+        }
 
 
+        void checkfileexistance(string filename)
+        {
+            if (!File.Exists(configpath))
+            {
+                createnewini(configpath);
+            }
+        }
 
         void loadvalue()
 
@@ -521,12 +649,11 @@ namespace FPS_Creator_Game_Launcher
         private void Form1_Load(object sender, EventArgs e)
 
         {
-
-            loadvalue();
-
-            tabControl1.Enabled = true;
-
-            Resolution_Selector.Text = LoadedResolution;
+            //if file exist 
+            //loadvalue();
+            //if not exist, create one with default values
+            //code goes here
+            checkfileexistance(configpath);
 
 
 
