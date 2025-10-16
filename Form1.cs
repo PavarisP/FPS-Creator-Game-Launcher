@@ -509,6 +509,8 @@ namespace FPS_Creator_Game_Launcher
                 cfg.SetValue("GAMEPROFILE", $"slot{slot}", "");
                 slot++;
             }
+            /* Well be added later for lading maps and leading screens  
+            cfg.Save();
             int level = 1;
             cfg.SetValue("GAMEPROFILE", "levelmax", nroflevels);
             do
@@ -516,10 +518,11 @@ namespace FPS_Creator_Game_Launcher
                 cfg.SetValue("GAMEPROFILE", $"levelfpm{level}", $"mapbank\\horrorgame\\{level}.fpm");
                 /*Set the loading screen
                 cfg.SetValue("GAMEPROFILE", $"levelfpi{level}", $"mapbank\\horrorgame\\{level}.fpm");*/
-            }
-            while (level <= nroflevels);
-            //saveall settings
-            cfg.Save();
+            //}
+            // while (level <= nroflevels);
+            //saveall settings*/
+
+            setdefault();
         }
 
 
