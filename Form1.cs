@@ -36,7 +36,7 @@ namespace FPS_Creator_Game_Launcher
         public string? language="english"; //Set this as the language of your game
 
         //unique game code
-        public string? uniquegamecode= "01o84r/:r22o40r/:.25e41x01e84H/:";//set you unique game code here, this is important for multiplayer games
+        public string? uniquegamecode= "01o84r/:r22o40r/:.25e41x01e84H/:";//set you unique game code here, this is important for multiplayer games, this is the code for my game.
 
         //loaded Resolution
 
@@ -424,6 +424,7 @@ namespace FPS_Creator_Game_Launcher
                 cfg.SetValue("GENRE", $"taunt{nooftaunts}", "");
                 nooftaunts++;
             }
+            cfg.Save();
             nooftaunts = 1;
             //GAMERUN section
             cfg.SetValue("GAMERUN", "realgameview", 1);
@@ -462,6 +463,7 @@ namespace FPS_Creator_Game_Launcher
             cfg.SetValue("GAMERUN", "airadius", 20);
             cfg.SetValue("GAMERUN", "disablepeeking", 0);
             cfg.SetValue("GAMERUN", "disableparticles", 0);
+            cfg.Save();
             //GAMEMULTIPLAYER section
             cfg.SetValue("GAMEMULTIPLAYER", "multiplayergame", 0);
             cfg.SetValue("GAMEMULTIPLAYER", "gameobjectivetype", 0);
@@ -470,6 +472,7 @@ namespace FPS_Creator_Game_Launcher
             cfg.SetValue("GAMEMULTIPLAYER", "maxplayers", 0);
             cfg.SetValue("GAMEMULTIPLAYER", "spawnrandom", 1);
             cfg.SetValue("GAMEMULTIPLAYER", "uniquegamecode",uniquegamecode);
+            cfg.Save();
 
             //GAMEDEBUG section
             cfg.SetValue("GAMEDEBUG", "height", 1020);
@@ -479,6 +482,7 @@ namespace FPS_Creator_Game_Launcher
             cfg.SetValue("GAMEDEBUG", "usefloor", 0);
             cfg.SetValue("GAMEDEBUG", "useenvsounds", 1);
             cfg.SetValue("GAMEDEBUG", "useweapons", 1);
+            cfg.Save();
 
             //GAMEPROFILE section
             cfg.SetValue("GAMEPROFILE", "title", $"languagebank\\{language}\\gamebank\\mygame\\titlepage.fpi");
@@ -496,17 +500,21 @@ namespace FPS_Creator_Game_Launcher
             cfg.SetValue("GAMEPROFILE", "key9 ", 16);
             cfg.SetValue("GAMEPROFILE", "key10", 18);
             cfg.SetValue("GAMEPROFILE", "key11", 42);
+            cfg.Save();
             while (nooftaunts <= 30)
             {
                 cfg.SetValue("GENRE", $"taunt{nooftaunts}", "");
                 nooftaunts++;
             }
+            cfg.Save();
             int slot = 1;
             while (slot <= 9)
             {
                 cfg.SetValue("GAMEPROFILE", $"slot{slot}", "");
                 slot++;
             }
+            /* Well be added later for lading maps and leading screens  
+            cfg.Save();
             int level = 1;
             cfg.SetValue("GAMEPROFILE", "levelmax", nroflevels);
             do
@@ -514,20 +522,14 @@ namespace FPS_Creator_Game_Launcher
                 cfg.SetValue("GAMEPROFILE", $"levelfpm{level}", $"mapbank\\horrorgame\\{level}.fpm");
                 /*Set the loading screen
                 cfg.SetValue("GAMEPROFILE", $"levelfpi{level}", $"mapbank\\horrorgame\\{level}.fpm");*/
-            }
-            while (level <= nroflevels);
-            //saveall settings
-            cfg.Save();
+            //}
+            // while (level <= nroflevels);
+            //saveall settings*/
+
+            setdefault();
         }
 
 
-        void checkfileexistance(string filename)
-        {
-            if (!File.Exists(configpath))
-            {
-                createnewini(configpath);
-            }
-        }
 
         void loadvalue()
 
@@ -653,7 +655,15 @@ namespace FPS_Creator_Game_Launcher
             //loadvalue();
             //if not exist, create one with default values
             //code goes here
-            checkfileexistance(configpath);
+            if (!File.Exists(configpath))
+            {
+                createnewini(configpath);
+                this.Show();
+            }
+            else
+            {
+                loadvalue();
+            }
 
 
 
