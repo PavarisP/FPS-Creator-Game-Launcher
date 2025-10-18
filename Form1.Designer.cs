@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            Textures_Quality = new ComboBox();
-            label2 = new Label();
+            Invmouse = new CheckBox();
+            label14 = new Label();
+            Mouse_Sensitivity = new TrackBar();
+            Vsync = new CheckBox();
             Resolution_Selector = new ComboBox();
             label1 = new Label();
             tabPage2 = new TabPage();
@@ -58,6 +60,11 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            tabPage3 = new TabPage();
+            UseEffects = new CheckBox();
+            Dynamiclights = new CheckBox();
+            Textures_Quality = new ComboBox();
+            label2 = new Label();
             pictureBox1 = new PictureBox();
             Save = new Button();
             Reset = new Button();
@@ -65,6 +72,7 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -72,7 +80,8 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 12);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Location = new Point(12, 16);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(263, 511);
@@ -80,8 +89,10 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(Textures_Quality);
-            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(Invmouse);
+            tabPage1.Controls.Add(label14);
+            tabPage1.Controls.Add(Mouse_Sensitivity);
+            tabPage1.Controls.Add(Vsync);
             tabPage1.Controls.Add(Resolution_Selector);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 24);
@@ -89,28 +100,49 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(255, 483);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Video Settings";
+            tabPage1.Text = "Options";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Textures_Quality
+            // Invmouse
             // 
-            Textures_Quality.ForeColor = SystemColors.WindowText;
-            Textures_Quality.FormattingEnabled = true;
-            Textures_Quality.Items.AddRange(new object[] { "High", "Meduim", "Low" });
-            Textures_Quality.Location = new Point(128, 55);
-            Textures_Quality.Name = "Textures_Quality";
-            Textures_Quality.Size = new Size(121, 23);
-            Textures_Quality.TabIndex = 3;
-            Textures_Quality.Text = "High";
+            Invmouse.AutoSize = true;
+            Invmouse.Location = new Point(128, 121);
+            Invmouse.Name = "Invmouse";
+            Invmouse.Size = new Size(95, 19);
+            Invmouse.TabIndex = 4;
+            Invmouse.Text = "Invert Mouse";
+            Invmouse.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label14
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(11, 58);
-            label2.Name = "label2";
-            label2.Size = new Size(91, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Textures Quality";
+            label14.AutoSize = true;
+            label14.Location = new Point(11, 66);
+            label14.Name = "label14";
+            label14.Size = new Size(99, 15);
+            label14.TabIndex = 6;
+            label14.Text = "Mouse Sensitivity";
+            // 
+            // Mouse_Sensitivity
+            // 
+            Mouse_Sensitivity.Location = new Point(128, 50);
+            Mouse_Sensitivity.Maximum = 100;
+            Mouse_Sensitivity.Minimum = 10;
+            Mouse_Sensitivity.Name = "Mouse_Sensitivity";
+            Mouse_Sensitivity.RightToLeft = RightToLeft.No;
+            Mouse_Sensitivity.Size = new Size(121, 45);
+            Mouse_Sensitivity.TabIndex = 2;
+            Mouse_Sensitivity.TabStop = false;
+            Mouse_Sensitivity.Value = 100;
+            // 
+            // Vsync
+            // 
+            Vsync.AutoSize = true;
+            Vsync.Location = new Point(17, 121);
+            Vsync.Name = "Vsync";
+            Vsync.Size = new Size(57, 19);
+            Vsync.TabIndex = 3;
+            Vsync.Text = "Vsync";
+            Vsync.UseVisualStyleBackColor = true;
             // 
             // Resolution_Selector
             // 
@@ -159,7 +191,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(255, 483);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Controls";
+            tabPage2.Text = "Keybinds";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // Peekright
@@ -361,10 +393,64 @@
             label3.TabIndex = 0;
             label3.Text = "Forward";
             // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(UseEffects);
+            tabPage3.Controls.Add(Dynamiclights);
+            tabPage3.Controls.Add(Textures_Quality);
+            tabPage3.Controls.Add(label2);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(255, 483);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Graphics";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // UseEffects
+            // 
+            UseEffects.AutoSize = true;
+            UseEffects.Location = new Point(128, 60);
+            UseEffects.Name = "UseEffects";
+            UseEffects.Size = new Size(83, 19);
+            UseEffects.TabIndex = 4;
+            UseEffects.Text = "Use Effects";
+            UseEffects.UseVisualStyleBackColor = true;
+            // 
+            // Dynamiclights
+            // 
+            Dynamiclights.AutoSize = true;
+            Dynamiclights.Location = new Point(17, 60);
+            Dynamiclights.Name = "Dynamiclights";
+            Dynamiclights.Size = new Size(108, 19);
+            Dynamiclights.TabIndex = 3;
+            Dynamiclights.Text = "Dynamic Lights";
+            Dynamiclights.UseVisualStyleBackColor = true;
+            // 
+            // Textures_Quality
+            // 
+            Textures_Quality.DropDownStyle = ComboBoxStyle.DropDownList;
+            Textures_Quality.ForeColor = SystemColors.WindowText;
+            Textures_Quality.FormattingEnabled = true;
+            Textures_Quality.Items.AddRange(new object[] { "High", "Meduim", "Low", "Custom" });
+            Textures_Quality.Location = new Point(128, 20);
+            Textures_Quality.Name = "Textures_Quality";
+            Textures_Quality.Size = new Size(121, 23);
+            Textures_Quality.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Textures Quality";
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(291, 36);
+            pictureBox1.Location = new Point(291, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(503, 525);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -373,7 +459,7 @@
             // 
             // Save
             // 
-            Save.Location = new Point(12, 538);
+            Save.Location = new Point(12, 541);
             Save.Name = "Save";
             Save.Size = new Size(75, 23);
             Save.TabIndex = 2;
@@ -383,7 +469,7 @@
             // 
             // Reset
             // 
-            Reset.Location = new Point(106, 538);
+            Reset.Location = new Point(106, 541);
             Reset.Name = "Reset";
             Reset.Size = new Size(75, 23);
             Reset.TabIndex = 3;
@@ -392,7 +478,7 @@
             // 
             // Launch
             // 
-            Launch.Location = new Point(197, 538);
+            Launch.Location = new Point(197, 541);
             Launch.Name = "Launch";
             Launch.Size = new Size(75, 23);
             Launch.TabIndex = 4;
@@ -404,7 +490,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(806, 568);
+            ClientSize = new Size(806, 589);
             Controls.Add(Launch);
             Controls.Add(Reset);
             Controls.Add(Save);
@@ -421,6 +507,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -430,8 +518,6 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private ComboBox Textures_Quality;
-        private Label label2;
         private ComboBox Resolution_Selector;
         private Label label1;
         private PictureBox pictureBox1;
@@ -460,5 +546,14 @@
         private Label label12;
         private ComboBox Peekright;
         private Label label13;
+        private CheckBox Vsync;
+        private Label label14;
+        private TrackBar Mouse_Sensitivity;
+        private CheckBox Invmouse;
+        private TabPage tabPage3;
+        private CheckBox UseEffects;
+        private CheckBox Dynamiclights;
+        private ComboBox Textures_Quality;
+        private Label label2;
     }
 }

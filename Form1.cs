@@ -364,6 +364,8 @@ namespace FPS_Creator_Game_Launcher
             Peekright.Text = "E";
             Resolution_Selector.Text = "1920x1080";
             Textures_Quality.Text = "High";
+            Vsync.Checked = true;
+            Mouse_Sensitivity.Value = 100;
         }
 
 
@@ -625,6 +627,36 @@ namespace FPS_Creator_Game_Launcher
                 try
                 {
                     var cfg = new ConfigParser(configpath);
+
+                    if (Textures_Quality.Text == "Low")
+                    {
+                        cfg.SetValue("GAMERUN", "dividetexturesize", 3);
+                    }
+                    else if (Textures_Quality.Text == "Medium")
+                    {
+                        cfg.SetValue("GAMERUN", "dividetexturesize", 2);
+                    }
+                    else if (Textures_Quality.Text == "High")
+                    {
+                        cfg.SetValue("GAMERUN", "dividetexturesize", 0);
+                    }
+
+                    if (Vsync.Checked == true)
+                    {
+                        cfg.SetValue("GAMERUN", "vsync", 1);
+                    }
+                    else
+                    {
+                        cfg.SetValue("GAMERUN", "vsync", 0);
+                    }
+                    if (Invmouse.Checked == true)
+                    {
+                        cfg.SetValue("GAMERUN", "invmouse", 1);
+                    }
+                    else
+                    {
+                        cfg.SetValue("GAMERUN", "invmouse", 0);
+                    }
 
                     cfg.SetValue("GAMEPROFILE", "key1", ForwardKey);
                     cfg.SetValue("GAMEPROFILE", "key2", BackwardKey);

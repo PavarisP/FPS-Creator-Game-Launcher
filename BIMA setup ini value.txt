@@ -77,7 +77,7 @@ gameobjectivevalue=0
 oneshotkills=0
 maxplayers=0
 spawnrandom=1
-uniquegamecode=01o84r/:r22o40r/:.25e41x01e84H/:
+uniquegamecode=
 
 [GAMEDEBUG]
 height=720
