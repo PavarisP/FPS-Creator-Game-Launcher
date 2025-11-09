@@ -20,7 +20,8 @@ namespace FPS_Creator_Game_Launcher
     {
         public static string rel_path = Directory.GetCurrentDirectory();
 
-        public string full_path = rel_path + @"\Horror\"; //Make sure to have the slash at the end and change "Horror" to the game folder name
+        public string? full_path = Path.Combine(rel_path, "Horror\\");         
+             //rel_path + @"\Horror\"; //Make sure to have the slash at the end and change "Horror" to the game folder name
 
         //Save keys
 
@@ -575,6 +576,7 @@ namespace FPS_Creator_Game_Launcher
                 setkeys();
             else
             {
+                createnewini(configpath);
                 setdefault();
             }
 
@@ -686,6 +688,7 @@ namespace FPS_Creator_Game_Launcher
         private void Form1_Load(object sender, EventArgs e)
 
         {
+         
             //if file exist 
             //loadvalue();
             //if not exist, create one with default values
@@ -752,7 +755,8 @@ namespace FPS_Creator_Game_Launcher
 
             string gameexe = P.StartInfo.WorkingDirectory = full_path;
 
-            P.StartInfo.FileName = gameexe + @"Horror.exe";
+                P.StartInfo.FileName = Path.Combine(gameexe, "Horror.exe");
+                //gameexe + @"Horror.exe";
 
             P.Start();
 

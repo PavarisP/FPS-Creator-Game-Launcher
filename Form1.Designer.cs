@@ -297,7 +297,7 @@
             // 
             Left_Dropdown.FormattingEnabled = true;
             Left_Dropdown.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
-            Left_Dropdown.Location = new Point(105, 94);
+            Left_Dropdown.Location = new Point(105, 58);
             Left_Dropdown.Name = "Left_Dropdown";
             Left_Dropdown.Size = new Size(121, 23);
             Left_Dropdown.TabIndex = 10;
@@ -306,7 +306,7 @@
             // 
             Backward.FormattingEnabled = true;
             Backward.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
-            Backward.Location = new Point(105, 50);
+            Backward.Location = new Point(105, 98);
             Backward.Name = "Backward";
             Backward.Size = new Size(121, 23);
             Backward.TabIndex = 9;
@@ -369,7 +369,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(17, 97);
+            label5.Location = new Point(17, 61);
             label5.Name = "label5";
             label5.Size = new Size(27, 15);
             label5.TabIndex = 2;
@@ -378,7 +378,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(17, 53);
+            label4.Location = new Point(17, 101);
             label4.Name = "label4";
             label4.Size = new Size(58, 15);
             label4.TabIndex = 1;
