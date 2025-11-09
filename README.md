@@ -1,5 +1,7 @@
 # FPS Creator Game Launcher
 
+![Screenshot](https://github.com/PavarisP/FPS-Creator-Game-Launcher/blob/78f126335715fb356d31716e8f0c8d69937764a4/Resources/Screenshot1.png)
+
 A custom game launcher for FPSC / BIM / BIMA Games by Pavaris Pobhirun. 
 
 In summary of the license: You can use the launcher in commercial projects and give credits to the original author, but if you distribute the launcher, you must release the corresponding source code, including all your changes, under the GPL v3 license. **(Only the launcher, NOT the game itself)**
