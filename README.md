@@ -9,7 +9,7 @@ In summary of the license: You can use the launcher in commercial projects and g
 # FYI
 I'm beginner in coding and this is my first ever program I created so it still has rooms for improvements. I'll try make the code more easy to read in the incoming updates. But at this time, there are many projects I'm current working on in my full-time job so I decide to release this early for the community to use. 
 
-**It will not work with S4real's Vishnu Product at the moment.**
+**It does not work with S4real's Vishnu Product at the moment.**
 
 # How to use Source Code
 Requirements:
@@ -30,4 +30,4 @@ Clone this directory
 # Roadmap for future updates
 - Volumn Control (Music only)
 - FOV
-
+- Vishnu Packer compatibility
