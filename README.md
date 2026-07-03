@@ -70,4 +70,7 @@ image fits cleanly. You can change the dimensions if you like — the picture bo
 (just keep a matching aspect ratio to avoid stretching/distortion).
 
 # Library Used
-- Solaris Config Parser https://github.com/salaros/config-parser
+- [Salaros Config Parser](https://github.com/salaros/config-parser)
+
+# Reference
+- For full details about the project, read [Code Documentation.docx](Code%20Documentation.docx).
