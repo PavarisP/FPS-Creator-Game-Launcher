@@ -10,7 +10,7 @@ namespace FPS_Creator_Game_Launcher
 
         public void Load()
         {
-            var cfg = new ConfigParser(AppPaths.ConfigPath);
+            var cfg = new ConfigParser(AppPaths.Actual_Config_Path);
             Forward = cfg.GetValue("GAMEPROFILE", "key1");
             Backward = cfg.GetValue("GAMEPROFILE", "key2");
             Left = cfg.GetValue("GAMEPROFILE", "key3");
@@ -29,7 +29,7 @@ namespace FPS_Creator_Game_Launcher
                          string sprintCode, string useCode, string reloadCode,
                          string peekLeftCode, string peekRightCode)
         {
-            var cfg = new ConfigParser(AppPaths.ConfigPath);
+            var cfg = new ConfigParser(AppPaths.Actual_Config_Path);
             cfg.SetValue("GAMEPROFILE", "key1", forwardCode);
             cfg.SetValue("GAMEPROFILE", "key2", backwardCode);
             cfg.SetValue("GAMEPROFILE", "key3", leftCode);

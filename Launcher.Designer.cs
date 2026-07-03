@@ -1,6 +1,6 @@
 ﻿namespace FPS_Creator_Game_Launcher
 {
-    partial class Form1
+    partial class Launcher
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             Invmouse = new CheckBox();
@@ -71,6 +71,7 @@
             Launch = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Mouse_Sensitivity).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -146,6 +147,7 @@
             // 
             // Resolution_Selector
             // 
+            Resolution_Selector.DropDownStyle = ComboBoxStyle.DropDownList;
             Resolution_Selector.FormattingEnabled = true;
             Resolution_Selector.Items.AddRange(new object[] { "1920x1080", "1080x720" });
             Resolution_Selector.Location = new Point(128, 8);
@@ -196,6 +198,7 @@
             // 
             // Peekright
             // 
+            Peekright.DropDownStyle = ComboBoxStyle.DropDownList;
             Peekright.FormattingEnabled = true;
             Peekright.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Peekright.Location = new Point(105, 435);
@@ -214,6 +217,7 @@
             // 
             // PeekLeft
             // 
+            PeekLeft.DropDownStyle = ComboBoxStyle.DropDownList;
             PeekLeft.FormattingEnabled = true;
             PeekLeft.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             PeekLeft.Location = new Point(105, 396);
@@ -232,6 +236,7 @@
             // 
             // Sprint
             // 
+            Sprint.DropDownStyle = ComboBoxStyle.DropDownList;
             Sprint.FormattingEnabled = true;
             Sprint.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Sprint.Location = new Point(105, 349);
@@ -250,6 +255,7 @@
             // 
             // Reload
             // 
+            Reload.DropDownStyle = ComboBoxStyle.DropDownList;
             Reload.FormattingEnabled = true;
             Reload.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Reload.Location = new Point(105, 307);
@@ -259,6 +265,7 @@
             // 
             // Useaction
             // 
+            Useaction.DropDownStyle = ComboBoxStyle.DropDownList;
             Useaction.FormattingEnabled = true;
             Useaction.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Useaction.Location = new Point(105, 268);
@@ -268,6 +275,7 @@
             // 
             // Crouch
             // 
+            Crouch.DropDownStyle = ComboBoxStyle.DropDownList;
             Crouch.FormattingEnabled = true;
             Crouch.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Crouch.Location = new Point(105, 222);
@@ -277,6 +285,7 @@
             // 
             // Jump
             // 
+            Jump.DropDownStyle = ComboBoxStyle.DropDownList;
             Jump.FormattingEnabled = true;
             Jump.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Jump.Location = new Point(105, 182);
@@ -286,6 +295,7 @@
             // 
             // Right_Dropdown
             // 
+            Right_Dropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             Right_Dropdown.FormattingEnabled = true;
             Right_Dropdown.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Right_Dropdown.Location = new Point(105, 136);
@@ -295,6 +305,7 @@
             // 
             // Left_Dropdown
             // 
+            Left_Dropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             Left_Dropdown.FormattingEnabled = true;
             Left_Dropdown.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Left_Dropdown.Location = new Point(105, 58);
@@ -304,6 +315,7 @@
             // 
             // Backward
             // 
+            Backward.DropDownStyle = ComboBoxStyle.DropDownList;
             Backward.FormattingEnabled = true;
             Backward.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Backward.Location = new Point(105, 98);
@@ -313,13 +325,13 @@
             // 
             // Forward
             // 
+            Forward.DropDownStyle = ComboBoxStyle.DropDownList;
             Forward.FormattingEnabled = true;
             Forward.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", ",", ";", ".", "[", "]", "/", "\"", "\\", "+", "~", "A", "B", "BackSpace", "C", "Capslock", "D", "Delete", "Down", "E", "End", "Enter", "Escape", "F", "F1", "F10", "F11", "F12", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "G", "H", "Home", "I", "Insert", "J", "K", "L", "LAlt", "LCtrl", "Left", "LShift", "M", "N", "Num-", "Num0", "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "NumEnter", "O", "P", "PgDown", "PgUp", "Q", "R", "RAlt", "RCtrl", "Right", "RShift", "S", "Space", "T", "Tab", "U", "Up", "V", "W", "X", "Y", "Z" });
             Forward.Location = new Point(105, 13);
             Forward.Name = "Forward";
             Forward.Size = new Size(121, 23);
             Forward.TabIndex = 8;
-            Forward.SelectedValueChanged += Forward_SelectedValueChanged;
             // 
             // label10
             // 
@@ -432,7 +444,7 @@
             Textures_Quality.DropDownStyle = ComboBoxStyle.DropDownList;
             Textures_Quality.ForeColor = SystemColors.WindowText;
             Textures_Quality.FormattingEnabled = true;
-            Textures_Quality.Items.AddRange(new object[] { "High", "Meduim", "Low", "Custom" });
+            Textures_Quality.Items.AddRange(new object[] { "High", "Medium", "Low", "Custom" });
             Textures_Quality.Location = new Point(128, 20);
             Textures_Quality.Name = "Textures_Quality";
             Textures_Quality.Size = new Size(121, 23);
@@ -473,8 +485,9 @@
             Reset.Name = "Reset";
             Reset.Size = new Size(75, 23);
             Reset.TabIndex = 3;
-            Reset.Text = "Reset";
+            Reset.Text = "Default";
             Reset.UseVisualStyleBackColor = true;
+            Reset.Click += Reset_Click;
             // 
             // Launch
             // 
@@ -485,9 +498,9 @@
             Launch.Text = "Launch";
             Launch.UseVisualStyleBackColor = true;
             Launch.Click += Launch_Click;
-            // 
-            // Form1
-            // 
+            //
+            // Launcher
+            //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(806, 589);
@@ -499,12 +512,13 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "Launcher";
             Text = "Launcher";
-            Load += Form1_Load;
+            Load += Launcher_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Mouse_Sensitivity).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
